@@ -1,0 +1,126 @@
+.s-dashboard-route .stat-icon-wrap {
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.s-dashboard-route .stat-icon-wrap:hover {
+  transform: scale(1.08);
+}
+
+.s-dashboard-route .s-stat-card:hover .stat-icon-wrap {
+  transform: scale(1.05);
+}
+
+.s-dashboard-route .s-stat-card {
+  transition: box-shadow 300ms ease, transform 300ms ease, background 300ms ease;
+}
+
+.s-dashboard-route .s-stat-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 12px 40px rgba(15,23,42,0.06), inset 0 1px 1px rgba(255,255,255,1) !important;
+}
+
+/* Phase 2: Main Grid hover states */
+.skills-card-hover:hover,
+.recent-sessions-card-hover:hover,
+.jump-in-card:hover,
+.my-mock-tests-card-hover:hover {
+  box-shadow: 0 4px 16px rgba(99,102,241,0.08), 0 0 0 1px rgba(99,102,241,0.18) !important;
+  transform: translateY(-1px);
+}
+
+.jump-in-row:hover {
+  transform: translateX(2px);
+}
+
+.jump-in-row:hover .jump-in-arrow {
+  color: #6366F1 !important;
+}
+
+@media (max-width: 640px) {
+  .skills-ring-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px 16px !important;
+  }
+
+  /* ── Dashboard hero — compact on mobile ─────────────────────────────────── */
+  .s-hero {
+    padding: 16px 18px !important;
+    min-height: unset !important;
+    gap: 12px !important;
+  }
+  .s-hero-greeting {
+    margin-bottom: 6px !important;
+  }
+  .s-hero-name {
+    font-size: 28px !important;
+  }
+  .s-hero-ctas {
+    margin-top: 12px !important;
+    gap: 8px !important;
+  }
+  .s-hero-cta {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+  .s-hero-streak {
+    padding: 6px 16px 6px 10px !important;
+    gap: 8px !important;
+  }
+  .s-hero-streak-icon {
+    width: 30px !important;
+    height: 38px !important;
+  }
+  .s-hero-streak-num {
+    font-size: 26px !important;
+  }
+
+  /* ── Level card — shorter + more compact on mobile ──────────────────────── */
+  .s-level-card {
+    padding: 14px 18px !important;
+    min-height: unset !important;
+    gap: 8px !important;
+  }
+  .s-level-header {
+    margin-bottom: 0 !important;
+  }
+  .s-level-icon {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .s-level-num {
+    font-size: 30px !important;
+  }
+  .s-level-label {
+    font-size: 12px !important;
+    margin-top: 2px !important;
+  }
+  .s-level-avg-row {
+    margin-top: 8px !important;
+    font-size: 11px !important;
+  }
+
+  /* ── AI insight strip — compact + dynamic height on mobile ──────────────── */
+  .s-insight-strip {
+    padding: 14px 16px !important;
+    min-height: unset !important;
+    height: auto !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+  .s-insight-mascot {
+    width: 40px !important;
+    height: 40px !important;
+    transform: none !important;
+    margin-left: 0 !important;
+    margin-top: 2px !important;
+  }
+  .s-insight-refresh {
+    padding: 8px !important;
+    gap: 0 !important;
+    align-self: flex-start !important;
+  }
+  .s-insight-refresh-label {
+    display: none !important;
+  }
+}

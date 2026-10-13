@@ -1,0 +1,79 @@
+/* Default screen styles */
+.mock-report {
+  max-width: 720px;
+  margin: 32px auto;
+  padding: 32px;
+  background: #FFFFFF;
+  color: #1A1A1A;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.mock-report h1 { font-size: 24px; margin-bottom: 4px; font-weight: bold; }
+.mock-report h2 { font-size: 18px; margin-top: 32px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #1A1A1A; font-weight: 600; }
+.mock-report h3 { font-size: 16px; margin-top: 24px; margin-bottom: 8px; font-weight: 600; }
+.mock-report h4 { font-size: 14px; margin-top: 16px; margin-bottom: 8px; font-weight: 600; }
+
+.mock-report table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+.mock-report th, .mock-report td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+.mock-report th { background: #f5f5f5; font-weight: 600; }
+
+.mock-report .report-section { margin-bottom: 40px; }
+.mock-report .signature-line { border-top: 1px solid #000; width: 60%; margin-top: 64px; padding-top: 8px; }
+.mock-report .text-sm { font-size: 14px; }
+.mock-report .text-gray { color: #666; }
+
+/* Print-only optimisations */
+@media print {
+  body, html {
+    background: white !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide UI chrome that doesn't belong on paper */
+  .print-hide,
+  nav,
+  aside,
+  .teacher-portal-sidebar,
+  .student-portal-sidebar,
+  header,
+  footer {
+    display: none !important;
+  }
+
+  .mock-report {
+    margin: 0;
+    padding: 24mm 18mm;     /* A4-friendly margins */
+    max-width: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  /* Each major section starts on a new page */
+  .report-section {
+    page-break-before: always;
+  }
+  .report-section:first-of-type {
+    page-break-before: avoid;
+  }
+
+  /* Prevent awkward breaks inside cards / tables */
+  table, .question-row, .band-row {
+    page-break-inside: avoid;
+  }
+
+  /* Compact typography for paper */
+  body {
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  .mock-report h1 { font-size: 20pt; }
+  .mock-report h2 { font-size: 14pt; }
+  .mock-report h3 { font-size: 12pt; }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 12mm;
+}

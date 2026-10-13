@@ -1,0 +1,41 @@
+{
+  "name": "english-connect-ai",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack --hostname 0.0.0.0",
+    "voice-proxy": "node server/voice-proxy.mjs",
+    "dev:all": "concurrently -n next,voice -c blue,magenta \"npm run dev\" \"npm run voice-proxy\"",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@ricky0123/vad-web": "^0.0.30",
+    "@types/three": "^0.184.1",
+    "groq-sdk": "^1.1.2",
+    "gsap": "^3.15.0",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^1.14.0",
+    "motion": "^12.40.0",
+    "next": "16.2.2",
+    "onnxruntime-web": "^1.24.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "three": "^0.184.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/ws": "^8.5.13",
+    "concurrently": "^9.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
